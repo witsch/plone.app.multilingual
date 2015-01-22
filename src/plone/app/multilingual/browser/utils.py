@@ -102,7 +102,7 @@ class BabelUtils(BrowserView):
         checkPermission = getSecurityManager().checkPermission
 
         translations = self.group.get_translations()
-        translated_info = [dict(code=key, info=tool.getAvailableLanguageInformation()[key], obj=translations[key]) for key in translations]
+        translated_info = [dict(code=key, info=tool.getAvailableLanguageInformation()[key], obj=translations[key]) for key in translations if key]
 
         default_language = tool.getDefaultLanguage()
 
